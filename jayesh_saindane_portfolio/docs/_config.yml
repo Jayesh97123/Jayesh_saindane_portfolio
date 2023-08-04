@@ -1,4 +1,22 @@
-title: My Angular Documentation
-theme: minima # Use the Jekyll theme you prefer
-markdown: kramdown
-exclude: ["node_modules", "tmp", "dist"]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Angular
+        run: npm run build
+
+      - name: Build Jekyll
+        run: bundle exec jekyll build
+        working-directory: ./docs # Adjust the working directory
