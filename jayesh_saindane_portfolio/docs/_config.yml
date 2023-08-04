@@ -1,0 +1,4 @@
+title: My Angular Documentation
+theme: minima # Use the Jekyll theme you prefer
+markdown: kramdown
+exclude: ["node_modules", "tmp", "dist"]
